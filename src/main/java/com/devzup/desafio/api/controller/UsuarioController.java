@@ -37,7 +37,7 @@ public class UsuarioController {
 		return userRepository.findAll();
 	}
 	
-	@GetMapping("/{usuarioId}")
+	/*@GetMapping("/{usuarioId}")
 	//Retornando um cliente espesifico
 	public ResponseEntity<Usuario> buscar (@PathVariable Long usuarioId) {
 		Optional<Usuario> usuario = userRepository.findById(usuarioId);
@@ -46,7 +46,7 @@ public class UsuarioController {
 			return ResponseEntity.ok(usuario.get());
 		}
 		return ResponseEntity.notFound().build();
-	}
+	}*/
 	//cadastro de usuario
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
