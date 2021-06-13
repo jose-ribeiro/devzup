@@ -1,6 +1,5 @@
 package com.devzup.desafio.domain.entidades;
 
-import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -36,11 +35,7 @@ public class Usuario  {
 	@NotNull
 	private String dataNascimento;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name="usuario_endereco",
-			joinColumns={@JoinColumn(name = "usuario_id")},
-			inverseJoinColumns={@JoinColumn(name = "endereco_id")})
-	private List<Veiculo> veiculos;
+
 	
 	public String getNome() {
 		return nome;
@@ -80,13 +75,7 @@ public class Usuario  {
 		return result;
 	}
 	
-	
-	public List<Veiculo> getEnderecos() {
-		return veiculos;
-	}
-	public void setEnderecos(List<Veiculo> veiculos) {
-		this.veiculos = veiculos;
-	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
