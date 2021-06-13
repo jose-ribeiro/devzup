@@ -1,4 +1,4 @@
-package com.devzup.desafio.entidades;
+package com.devzup.desafio.domain.entidades;
 
 import java.util.List;
 import javax.persistence.*;
