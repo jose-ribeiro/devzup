@@ -1,4 +1,4 @@
-package com.devzup.desafio.controller;
+package com.devzup.desafio.api.controller;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

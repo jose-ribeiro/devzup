@@ -1,4 +1,4 @@
-package com.devzup.desafio.repositorio;
+package com.devzup.desafio.domain.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
