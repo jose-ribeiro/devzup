@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.devzup.desafio.domain.entidades.Veiculo;
 
 @Repository
-public interface VeioculoRepositorio extends JpaRepository<Veiculo, Long> {
+public interface VeiculoRepositorio extends JpaRepository<Veiculo, Long> {
 
 }
