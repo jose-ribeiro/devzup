@@ -22,7 +22,7 @@ public class Veiculo {
 	
 	@NotNull
 	@Size(max = 4)
-	private Integer ano;
+	private String ano;
 	
 	
 	public Long getId() {
@@ -43,10 +43,10 @@ public class Veiculo {
 	public void setModeloVeiculo(String modeloVeiculo) {
 		this.modeloVeiculo = modeloVeiculo;
 	}
-	public Integer getAno() {
+	public String getAno() {
 		return ano;
 	}
-	public void setAno(Integer ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 	@Override
