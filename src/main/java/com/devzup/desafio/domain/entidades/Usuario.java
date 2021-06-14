@@ -1,6 +1,12 @@
 package com.devzup.desafio.domain.entidades;
 
-import javax.persistence.*;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -34,6 +40,8 @@ public class Usuario  {
 	@NotBlank
 	@NotNull
 	private String dataNascimento;
+	
+	private Set<Veiculo> veiculo;
 
 
 	

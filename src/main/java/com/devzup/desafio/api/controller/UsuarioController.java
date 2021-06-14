@@ -32,25 +32,13 @@ public class UsuarioController {
 	public UsuarioService cadastroUsuario;
 	
 	@GetMapping
-	//fazendo a busca de todos os cliente
 	public List<Usuario> listar(){
 		return userRepository.findAll();
 	}
 	
-	/*@GetMapping("/{usuarioId}")
-	//Retornando um cliente espesifico
-	public ResponseEntity<Usuario> buscar (@PathVariable Long usuarioId) {
-		Optional<Usuario> usuario = userRepository.findById(usuarioId);
-
-		if(usuario.isPresent()) {
-			return ResponseEntity.ok(usuario.get());
-		}
-		return ResponseEntity.notFound().build();
-	}*/
-	//cadastro de usuario
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario adicionar (@Valid @RequestBody Usuario usuario) {//Resquest transformar o json do corpo da quequisição em objeto cliente
+	public Usuario adicionar (@Valid @RequestBody Usuario usuario) {
 		return cadastroUsuario.salvar(usuario);
 	}
 	
