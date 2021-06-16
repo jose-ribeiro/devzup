@@ -2,6 +2,7 @@ package com.devzup.desafio.domain.entidades;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,8 +43,11 @@ public class Usuario  {
 	@NotNull
 	private String dataNascimento;
 	
-	@OneToMany(mappedBy="usuario")
-	@Column(nullable = true)
+	@OneToMany(
+			mappedBy="usuario",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
 	private Set<Veiculo> veiculos;
 	
 	public Long getUsuarioId() {

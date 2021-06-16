@@ -29,6 +29,7 @@ public class VeiculoController {
 	public VeiculoService cadastroVeiculo;
 	
 	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
 	public List<Veiculo> listar(){
 		return veiculoRepositorio.findAll();
 	}
