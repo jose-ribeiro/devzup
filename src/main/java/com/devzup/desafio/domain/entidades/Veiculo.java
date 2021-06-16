@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,6 +25,10 @@ public class Veiculo {
 	@NotNull
 	@Size(max = 4)
 	private String ano;
+	
+    @ManyToOne
+    @JoinColumn(name="usuario_id", nullable=false)
+	private Usuario usuario;
 	
 	
 	public Long getId() {
@@ -48,6 +54,15 @@ public class Veiculo {
 	}
 	public void setAno(String ano) {
 		this.ano = ano;
+	}
+	
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	@Override
 	public int hashCode() {
