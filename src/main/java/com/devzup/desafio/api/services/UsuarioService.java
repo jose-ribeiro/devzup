@@ -25,8 +25,8 @@ public class UsuarioService {
 	public List<Usuario> listar(){
 		return usuarioRepositorio.findAll();
 	}
-	public List <Usuario> listarCpf(){
-		return usuarioRepositorio.findByCpf("01372137270");
+	public Optional<Usuario> buscarPorCpf(String cpf){
+		return usuarioRepositorio.findByCpf(cpf);
 	}
 		
 }
