@@ -20,20 +20,24 @@ import com.devzup.desafio.domain.repositorio.UsuarioRepositorio;
 public class UsuarioController {
 	
 	@Autowired
-	public UsuarioRepositorio userRepository;
-	
-	@Autowired
-	public UsuarioService cadastroUsuario;
+	public UsuarioService usuarioService;
 	
 	@GetMapping
 	public List<Usuario> listar(){
-		return userRepository.findAll();
+		return usuarioService.listar();
+
 	}
+	
+	@GetMapping("/cpf")
+	public List <Usuario> listarNome(){
+		return usuarioService.listarCpf();
+	}
+	
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario adicionar (@Valid @RequestBody Usuario usuario) {
-		return cadastroUsuario.salvar(usuario);
+		return usuarioService.salvar(usuario);
 	}
 	
 	

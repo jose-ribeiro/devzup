@@ -17,8 +17,8 @@ public class VeiculoService {
 	
 	public Veiculo salvar(Veiculo veiculo, Long idUsuario)  {
 		Optional<Usuario> usuario = usuarioService.findById(idUsuario);
-		Usuario usuarioEncontrado = usuario.get();
-		veiculo.setUsuario(usuarioEncontrado);
+		Usuario usuarioid = usuario.get();
+		veiculo.setUsuario(usuarioid);
 		return veiculoRepositorio.save(veiculo);
 	}
 	

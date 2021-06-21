@@ -1,8 +1,11 @@
 package com.devzup.desafio.api.services;
 
+import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.devzup.desafio.domain.entidades.Usuario;
 import com.devzup.desafio.domain.repositorio.UsuarioRepositorio;
 
@@ -19,6 +22,13 @@ public class UsuarioService {
 		return usuarioRepositorio.findById(id);
 	}
 	
+	public List<Usuario> listar(){
+		return usuarioRepositorio.findAll();
+	}
+	public List <Usuario> listarCpf(){
+		return usuarioRepositorio.findByCpf("02280014203");
+	}
+		
 }
 
 
