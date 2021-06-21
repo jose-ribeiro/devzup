@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.devzup.desafio.api.services.UsuarioService;
 import com.devzup.desafio.domain.entidades.Usuario;
-import com.devzup.desafio.domain.repositorio.UsuarioRepositorio;
+
 
 
 @RestController
@@ -23,12 +23,14 @@ public class UsuarioController {
 	public UsuarioService usuarioService;
 	
 	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
 	public List<Usuario> listar(){
 		return usuarioService.listar();
 
 	}
 	
 	@GetMapping("/cpf")
+	@ResponseStatus(HttpStatus.OK)
 	public List <Usuario> listarNome(){
 		return usuarioService.listarCpf();
 	}
