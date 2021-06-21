@@ -15,10 +15,10 @@ public class VeiculoService {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	public Veiculo salvar(Veiculo veiculo, Long idUsuario)  {
-		Optional<Usuario> usuario = usuarioService.findById(idUsuario);
-		Usuario usuarioid = usuario.get();
-		veiculo.setUsuario(usuarioid);
+	public Veiculo salvar(Veiculo veiculo)  {
+		Optional<Usuario> usuario = usuarioService.findById(veiculo.getUsuario().getUsuarioId());
+		Usuario usuarioObtido = usuario.get();
+		veiculo.setUsuario(usuarioObtido);
 		return veiculoRepositorio.save(veiculo);
 	}
 	

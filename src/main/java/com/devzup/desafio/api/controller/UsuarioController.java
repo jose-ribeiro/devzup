@@ -29,9 +29,9 @@ public class UsuarioController {
 
 	}
 	
-	@GetMapping("/cpf")
+	@GetMapping("/cpf/{cpf}")
 	@ResponseStatus(HttpStatus.OK)
-	public List <Usuario> listarNome(){
+	public List <Usuario> listaPorCpf(){
 		return usuarioService.listarCpf();
 	}
 	

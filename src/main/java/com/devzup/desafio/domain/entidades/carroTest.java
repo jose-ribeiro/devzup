@@ -13,15 +13,15 @@ public class carroTest {
 		
 		switch(diaDaSemana) {
 		case 0 :
-			case 1:
+		case 1:
 			System.out.println("Segunda feira");
 			break;
 		case 2:
-			case 3:
+		case 3:
 			System.out.println("Terça feira");
 			break;
 		case 4:
-			case 5:
+		case 5:
 			System.out.println("Quarta feira");
 			break;
 		case 6:

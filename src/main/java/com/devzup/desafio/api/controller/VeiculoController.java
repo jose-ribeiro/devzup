@@ -32,10 +32,10 @@ public class VeiculoController {
 		return veiculoRepositorio.findAll();
 	}
 	
-	@PostMapping("/{idUsuario}")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Veiculo adicionar(@PathVariable Long idUsuario, @Valid @RequestBody Veiculo veiculo) throws Exception {
-		return cadastroVeiculo.salvar(veiculo, idUsuario);
+	public Veiculo adicionar( @Valid @RequestBody Veiculo veiculo) throws Exception {
+		return cadastroVeiculo.salvar(veiculo);
 	}
 	
 }
