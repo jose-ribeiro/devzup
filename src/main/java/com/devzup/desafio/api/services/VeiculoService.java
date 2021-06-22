@@ -1,5 +1,6 @@
 package com.devzup.desafio.api.services;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class VeiculoService {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	public List <Veiculo> listarVeiculo (){
+		return veiculoRepositorio.findAll();
+	}
 	public Veiculo salvar(Veiculo veiculo)  {
 		Optional<Usuario> usuario = usuarioService.findById(veiculo.getUsuario().getUsuarioId());
 		Usuario usuarioObtido = usuario.get();
